@@ -5,7 +5,7 @@ from typing import Optional, Union
 from transformers import AutoConfig
 from huggingface_hub.utils import (
     EntryNotFoundError,
-    HTTPError,
+    HfHubHTTPError,
     RepositoryNotFoundError,
     RevisionNotFoundError,
     cached_path,
@@ -150,7 +150,7 @@ def load_weights_and_config(
                 raise EnvironmentError(
                     f"{pretrained_model_name_or_path} does not appear to have a file named {filename}."
                 )
-        except HTTPError as err:
+        except HfHubHTTPError as err:
             raise EnvironmentError(
                 f"There was a specific connection error when trying to load {pretrained_model_name_or_path}:\n"
                 f"{err}"
