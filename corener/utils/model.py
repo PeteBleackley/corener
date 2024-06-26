@@ -4,7 +4,6 @@ from typing import Optional, Union
 
 from transformers import AutoConfig
 from transformers.modeling_utils import (
-    HUGGINGFACE_CO_RESOLVE_ENDPOINT,
     EntryNotFoundError,
     HTTPError,
     RepositoryNotFoundError,
@@ -157,7 +156,7 @@ def load_weights_and_config(
             )
         except ValueError:
             raise EnvironmentError(
-                f"We couldn't connect to '{HUGGINGFACE_CO_RESOLVE_ENDPOINT}' to load this model, couldn't find it in the cached "
+                f"We couldn't connect to 'HuggingFace' to load this model, couldn't find it in the cached "
                 f"files and it looks like {pretrained_model_name_or_path} is not the path to a directory "
                 f"containing a file named {WEIGHTS_NAME}.\n"
                 "Checkout your internet connection or see how to run the library in offline mode at "
