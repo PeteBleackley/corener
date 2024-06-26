@@ -3,7 +3,7 @@ import os
 from typing import Optional, Union
 
 from transformers import AutoConfig
-from transformers.modeling_utils import (
+from huggingface_hub.utils import (
     EntryNotFoundError,
     HTTPError,
     RepositoryNotFoundError,
@@ -14,6 +14,7 @@ from transformers.modeling_utils import (
     is_remote_url,
     load_state_dict,
 )
+
 
 from corener.utils import set_logger
 
